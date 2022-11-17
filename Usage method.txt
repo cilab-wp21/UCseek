@@ -1,0 +1,28 @@
+# The uploaded files are the sample files used in the methylation model script for reference only
+#UCseek pipline
+(1) CNV model value
+First step：
+python varbin.py sample_name.bam ./sample_name ./sample_name-stat
+Second step：
+Rscript varbin.R
+#The file with suffix.nobad.varbin.data.txt is obtained, and the lowratio column is extracted as the input value of the copy number model.
+Third step：Calculate the copy number model marking value
+#Get the copy number score of the sample
+Rscript cnv_model_value.R
+（2）methylation model value
+#An example is generated to illustrate the methylation model
+
+first step：
+Rscript parameter of estimation.R
+Second step:
+Rscript probability of read.R
+Third step:
+Rscript combine_data.R
+Fourth step:
+Rscript tumor_fraction.R
+#Get the methylation model score of the score
+(3) UCseek score
+Script calculate_UCseek.R
+
+
+
